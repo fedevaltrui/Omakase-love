@@ -1,16 +1,11 @@
 /** @type {import('next').NextConfig} */
-
-const isProd = process.env.NODE_ENV === 'production';
-const repoName = 'Omakase-love';
-
 const nextConfig = {
-  output: 'export',
-
-  basePath: isProd ? `/${repoName}` : '',
-  assetPrefix: isProd ? `/${repoName}/` : '',
+  reactStrictMode: true,
+  // ⚠️ Sacamos output: 'export'
+  // ⚠️ Sacamos basePath y assetPrefix (Vercel no los necesita)
 
   images: {
-    unoptimized: true,
+    unoptimized: true, // opcional, por si no querés usar el optimizador de imágenes
   },
 };
 
